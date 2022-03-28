@@ -1,0 +1,103 @@
+<html>
+    <head><title>animation</title>
+    <style>
+     div p{
+         display: inline-block;
+         border: 2px solid red;
+         width:100px;
+         margin-top: 200px;
+         text-align: center;
+         
+        }
+     @keyframes down-char{
+         to{
+             transform: translate(350px);
+         }
+         
+     }
+     p:nth-child(even){
+         animation-name:down-char;
+         animation-duration: 1s;
+         animation-iteration-count: 10000;
+         animation-direction: alternate;
+     }
+      #p1{
+          position:absolute;
+          left: 100px;
+      }
+      #p2{
+          position:absolute;
+          left: 200px;
+      }
+      #p3{
+          position:absolute;
+          left: 700px;
+      }
+      #p4{
+          position:absolute;
+          left: 800px;
+      }
+      #p5{
+          position:absolute;
+          left: 1230px;
+      }
+      #weel{
+          position: absolute;
+          left: 1270px;
+          top: 150px;
+          transition:12s;
+          animation: weel 1s linear infinite;
+      }
+      
+      @keyframes weel{
+         100%{
+             transform:rotate(360deg);
+            }
+         }
+         #next{
+             position: relative;
+             left: 150px;
+             top: 400px;
+             height:50px;
+             width:50px; 
+           }
+         #pre{
+             position: relative;
+             left: 1100;
+             top: 400px;
+             height:50px;
+             width:50px;
+         }
+         #next:hover::before{
+             width: 100%;
+         }
+#next:hover ~ #weel{
+   
+    left:0;
+}
+
+         
+    </style>
+    </head>
+    <body>
+    
+        <div class="char-box">
+            <p id="p1">A</p>
+            <p id="p2">S</p>
+            <p id="p3">H</p>
+            <p id="p4">U</p>
+            <p id="p5">welcome</p> 
+        </div>
+        
+      <input type="button"value="<<"id="next">
+      <input type="button" value=">>" id="pre"> 
+      <img src="https://5.imimg.com/data5/DK/KT/WM/SELLER-57230940/hyundai-car-wheel-500x500.jpg"height="50px"width="50px" id="weel"onMouseOver="setImage(this)"onMouseOut="setDefoultImage()">
+    </body>
+    <script>
+        function setImage(req){
+            t1.src=req.src;
+        }
+        
+
+    </script>
+</html>
